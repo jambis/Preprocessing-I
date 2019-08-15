@@ -455,6 +455,44 @@ header nav a {
   width: 25%;
 }
 /*===================== Portfolio.html =====================*/
+.portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+  margin: 1.5% 1.5%;
+}
+@media (max-width: 500px) {
+  .portfolio {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .portfolio div.item {
+    width: 90%;
+  }
+}
+.portfolio h1 {
+  width: 100%;
+}
+.portfolio .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border: 0.2rem solid #0b0c10;
+  box-shadow: 0.8rem 0.8rem 1rem #0b0c10;
+  border-radius: 4vw;
+  margin: 1.5% 1.5%;
+  padding: 1.5% 1.5%;
+  width: 40%;
+}
+.portfolio .item a {
+  text-decoration: none;
+  border: 0.1rem solid #c5c6c7;
+  border-radius: 4vw;
+  padding: 1rem 3rem;
+  margin: 0.5rem 0;
+}
 footer {
   background-color: #1f2833;
   display: flex;
