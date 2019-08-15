@@ -15,7 +15,8 @@ html {
 p,
 a,
 h2,
-h3 {
+h3,
+li {
   font-family: @paragraphFont;
   color: @lightColor;
 }
@@ -43,85 +44,118 @@ header {
   }
 }
 
-.intro {
-  .intro-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.intro-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    .intro-content {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      width: 65%;
-      padding: 1.5% 1.5%;
-      .bordered();
+  @media (max-width: 500px) {
+    div.intro-content {
+      width: 90%;
 
       .intro-img {
-        img {
-          width: 70%;
-          height: auto;
-          border-radius: 4rem;
+        display: none;
+      }
+
+      .intro-text {
+        width: 100%;
+        li {
+          display: none;
+        }
+        p {
+          display: block;
         }
       }
-      .intro-text {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        padding: 1.5% 1.5%;
-        width: 50%;
-        height: 20vw;
+    }
+  }
+
+  .intro-content {
+    .flexSpaceAround();
+    align-items: center;
+    width: 65%;
+    padding: 1.5% 1.5%;
+    .bordered();
+
+    .intro-img {
+      img {
+        width: 70%;
+        // height: auto;
+        border-radius: 4vw;
       }
     }
-    a {
-      text-decoration: none;
-      border: 0.2rem;
+    .intro-text {
+      .flexSpaceAround();
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5% 1.5%;
+      width: 50%;
+
+      li {
+        margin: 5% 0;
+      }
+      p {
+        display: none;
+      }
     }
+  }
+  a {
+    text-decoration: none;
+    border: 0.1rem solid @lightColor;
+    border-radius: 4vw;
+    padding: 1rem 3rem;
   }
 }
 
 .skills {
   text-align: center;
-  display: flex;
+  .flexSpaceAround();
   flex-wrap: wrap;
-  justify-content: space-around;
   align-content: space-around;
-  height: 100vh;
+  margin: 1.5% 1.5%;
 
+  @media (max-width: 500px) {
+    flex-direction: column;
+    justify-content: space-around;
+
+    div.item {
+      width: 90%;
+      margin: 2% 1%;
+
+      i {
+        display: none;
+      }
+
+      .skills-text {
+        width: 100%;
+      }
+    }
+  }
   h1 {
     width: 100%;
   }
 
   .item {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    .flexSpaceAround();
+    align-items: center;
     .bordered();
-    margin: 1rem 1rem;
-    padding: 2rem 2rem;
-    position: relative;
+    margin: 1.5% 1.5%;
+    padding: 1.5% 1.5%;
     width: 40%;
 
     i {
-      position: absolute;
-      left: 5rem;
-      top: 5rem;
+      color: @tealColor;
     }
-    h3,
-    p {
-      width: 70%;
+    .skills-text {
+      width: 50%;
     }
   }
 }
 
 .work {
   text-align: center;
-
+  margin: 1.5% 0;
   .row {
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
+    .flexSpaceAround();
 
     &:nth-of-type(2n) {
       background-color: @darkerColor;
@@ -135,6 +169,5 @@ header {
 
 footer {
   background-color: @darkColor;
-  display: flex;
-  justify-content: space-around;
+  .flexSpaceAround();
 }
