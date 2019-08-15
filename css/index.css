@@ -408,6 +408,7 @@ header nav a {
   .skills {
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
   }
   .skills div.item {
     width: 90%;
