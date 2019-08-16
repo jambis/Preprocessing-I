@@ -1,0 +1,24 @@
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5;
+  background-color: @darkColor;
+}
+
+p,
+a,
+h2,
+h3,
+li {
+  font-family: @paragraphFont;
+  color: @lightColor;
+}
+
+h1 {
+  font-family: @titleFont;
+  color: @darktealColor;
+  .textShadow();
+}
